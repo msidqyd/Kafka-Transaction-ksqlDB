@@ -32,6 +32,9 @@ Sends fake transaction events into Kafka topic `transactions`, with fields:
 
 ---
 
+![Screenshot 2025-06-22 220636](https://github.com/user-attachments/assets/d79f91e2-eb19-4872-b85d-27098c26f9d5)
+
+
 ## Kafka Consumer
 
 Consumes messages from Kafka topic `transactions`:
@@ -48,6 +51,7 @@ for message in consumer:
                                           message.offset, message.key,
                                           message.value))
 ```
+![Screenshot 2025-06-22 220649](https://github.com/user-attachments/assets/b459ab1e-6ce4-4808-bba9-3a6919a4a02e)
 
 ## For run the ksqlDB, open localhost:8083
 ## ksqlDB Stream
@@ -69,6 +73,9 @@ CREATE STREAM transactions_stream (
     VALUE_FORMAT = 'JSON'
 );
 ```
+![Screenshot 2025-06-22 213827](https://github.com/user-attachments/assets/577428d0-9d1d-4c35-b233-604b6aa646b9)
+![Screenshot 2025-06-22 214121](https://github.com/user-attachments/assets/b57bbdfb-cce6-4031-a325-baab61a435ff)
+
 ## ksqlDB Table (aggregation)
 
 ```SQL
@@ -82,9 +89,11 @@ FROM transactions_stream
 GROUP BY user_id
 EMIT CHANGES;
 ```
+![Screenshot 2025-06-22 214158](https://github.com/user-attachments/assets/8bd95050-0d66-4fe5-ae66-d1b69fdb4f00)
 
 ## Query The Table
 ``` SQL
 SELECT * FROM user_agg_total EMIT CHANGES;
 ```
+![Screenshot 2025-06-22 214330](https://github.com/user-attachments/assets/90fda1fe-bd82-4f43-b5df-4c09e1b680d0)
 
