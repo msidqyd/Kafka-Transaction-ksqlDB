@@ -11,7 +11,8 @@ This project sends fake transaction data events to Kafka topic `transactions`, r
 - Make Kafka
 - Make Jupyter
 - Open Jupyter Notebook: `producer-transaction.py` & `consumer-transaction.py`
-
+- Setup Topic
+![Screenshot 2025-06-22 212359](https://github.com/user-attachments/assets/b728c49d-deb5-4cbb-9e0e-15f5a04569b2)
 --- 
 
 ## Kafka Producer
@@ -55,8 +56,6 @@ for message in consumer:
 
 ## For run the ksqlDB, open localhost:8083
 
-## Setup Topic
-![Screenshot 2025-06-22 212359](https://github.com/user-attachments/assets/b728c49d-deb5-4cbb-9e0e-15f5a04569b2)
 
 
 ## ksqlDB Stream
